@@ -1,0 +1,447 @@
+/* GLOBAL */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  background: transparent;
+}
+
+body {
+  background: #3d3d3d;
+  color: white;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* VARIABLE */
+
+:root {
+  --transition: all 250ms ease-in-out;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: rgb(30, 30, 30);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.active {
+  color: goldenrod;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid goldenrod;
+}
+
+.mobileMenu {
+  display: none;
+  object-fit: cover;
+  height: 1.8rem;
+}
+
+.navMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  height: fit-content;
+  min-width: 15rem;
+  top: 4rem;
+  right: 2rem;
+  z-index: 2;
+  background: rgb(40, 40, 40);
+  border-radius: 1rem;
+}
+
+.listItem {
+  color: #fff;
+  padding: 0.5rem 3rem;
+  margin: 0.25rem;
+  background: rgb(30, 30, 30);
+}
+
+.logo {
+  object-fit: cover;
+  height: 3rem;
+  width: 4rem;
+}
+
+.desktopMenuListItem {
+  margin: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.desktopMenuListItem:hover {
+  color: goldenrod;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid goldenrod;
+}
+
+.desktopMenuImg {
+  object-fit: cover;
+  height: 1rem;
+  width: 1rem;
+}
+
+.desktopTopMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: var(--transition);
+}
+
+.desktopTopMenuButton:hover {
+  color: white;
+  background-color: black;
+}
+
+/* INTRODUCTION SECTION */
+
+#introduction {
+  position: relative;
+  height: calc(100vh - 4rem);
+  width: 100vw;
+  max-width: 75rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  object-fit: cover;
+  z-index: -1;
+  height: 100vh;
+}
+
+.introductionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hi {
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+
+.introductionName {
+  color: goldenrod;
+}
+
+.introductionParagraph {
+  font-size: medium;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.btn {
+  background: white;
+  margin: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+}
+
+.btnImg {
+  object-fit: cover;
+  margin: 0 0.25rem;
+  height: 1rem;
+}
+
+@media screen and (max-width: 840px) {
+  .bg {
+    right: -10vw;
+  }
+
+  .introductionContent {
+    font-size: 10vw;
+  }
+
+  .hi {
+    font-size: 4.5vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bg {
+    right: -20vw;
+  }
+}
+
+/* SKILLS SECTION */
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 65rem;
+}
+
+.skillsTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  padding-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.skillsDesc {
+  font-weight: 400;
+  font-size: 1rem;
+  max-width: 51rem;
+  padding: 0rem 2rem;
+}
+
+.skillsBars {
+  margin: 1.5rem;
+  width: 100vw;
+  max-width: 80%;
+  text-align: left;
+}
+
+.skillBar {
+  display: flex;
+  margin: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: rgb(50, 50, 50);
+}
+
+.skillBarImg {
+  object-fit: cover;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
+}
+
+.skillBarText > p {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+@media screen and (max-width: 720px) {
+  .skillBarText > p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skillBarText > p {
+    font-size: 3vw;
+  }
+
+  .skillBarImg {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .skillBarText > h2 {
+    font-size: 5vw;
+  }
+}
+
+/* WORKS SECTION */
+
+#works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0rem 1rem;
+  min-height: calc(100vh - 4rem);
+  width: 100vw;
+  max-width: 60rem;
+}
+
+.worksTitle {
+  margin: 1rem 0;
+  font-size: 3rem;
+}
+
+.worksDesc {
+  font-weight: 300;
+  font-size: 1rem;
+  max-width: 45rem;
+}
+
+.worksImgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  max-width: 65rem;
+}
+
+.worksImg {
+  object-fit: cover;
+  height: 20rem;
+  margin: 0.5rem;
+}
+
+.worksBtn {
+  margin: 3rem 0rem;
+  padding: 0.5rem 2.5rem;
+  border: none;
+  background: #fff;
+  border-radius: 2rem;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 585px) {
+  .worksImg {
+    height: 50vw;
+  }
+}
+
+/* CONTACT SECTION */
+
+#contactPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+  width: 100vw;
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactPageTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.clientDesc {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.clientImgs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.clientImg {
+  object-fit: cover;
+  width: 23%;
+  max-width: 9rem;
+  margin: auto;
+  padding: 0.25rem;
+}
+
+#clients {
+  padding: 2rem;
+}
+
+.contactDesc {
+  padding: 1rem;
+  font-size: medium;
+  font-weight: 300;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  width: 90vw;
+  max-width: 60rem;
+}
+
+.name,
+.email,
+.message {
+  font-size: medium;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #fff;
+  border-radius: 0.5rem;
+  background: rgb(40, 40, 40);
+}
+
+.submitBtn {
+  background: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 2rem;
+  padding: 0.75rem 3.5rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link {
+  object-fit: cover;
+  height: 3rem;
+  width: 3rem;
+  margin: 0 0.75rem;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: small;
+  width: 100vw;
+  height: 4rem;
+  background: rgb(40, 40, 40);
+}
+
+/* RESPONSIVE MENU BAR */
+
+@media screen and (max-width: 720px) {
+  .mobileMenu {
+    display: flex;
+  }
+
+  .desktopMenu {
+    display: none;
+  }
+
+  .desktopTopMenuButton {
+    display: none;
+  }
+}
